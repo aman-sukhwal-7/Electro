@@ -1,0 +1,94 @@
+#head
+{
+  text-align: center;
+  color: white;
+  font-size: 4vh;
+  top: 0;
+  position: fixed;
+}
+#base
+{
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% ;
+  position: absolute;
+  top: 15%;
+  left: 32%;
+  width: 450px;
+  height: 450px;
+  background: #282828;
+  padding: 2%;
+  border-radius: 1%;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 1);
+}
+#pd
+{
+    border: 0.5px solid #282828;
+    margin: 4%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    background:radial-gradient( ellipse, #8af7e4 0.5%, #0033FF );
+   
+}
+
+#pd:nth-child(5n-1)
+{
+  background:radial-gradient( ellipse, #FF3353 0.5%, #ff0028 );
+}#pd:nth-child(5n-2)
+{
+  background:radial-gradient( ellipse, #ffff00 0.5%, #ff9933 );
+}#pd:nth-child(5n-3)
+{
+  background:radial-gradient( ellipse, lightpink 0.5%, #CC00FF );
+}
+.pdc
+{
+    box-shadow: 2px 3px 1.5px rgba(0, 0, 0, 1);
+}
+.bright:nth-child(5n)
+{
+  filter: brightness(150%);
+  box-shadow: 0 0 4px #8af7e4, 0 0 8px #8af7e4, 0 0 15px #8af7e4;
+}
+.bright:nth-child(5n-1)
+{
+  filter: brightness(150%);
+  box-shadow: 0 0 4px #ff3353, 0 0 8px #ff3353, 0 0 15px #FF3353;
+}
+.bright:nth-child(5n-2)
+{
+  filter: brightness(150%);
+  box-shadow: 0 0 4px #ffff00, 0 0 8px #ffff00, 0 0 15px #ffff00;
+}
+.bright:nth-child(5n-3)
+{
+  filter: brightness(150%);
+  box-shadow: 0 0 4px lightpink, 0 0 8px lightpink, 0 0 15px lightpink;
+}
+.bright:nth-child(5n-4)
+{
+  filter: brightness(150%);
+  box-shadow: 0 0 4px #8af7e4, 0 0 8px #8af7e4, 0 0 15px #8af7e4;
+}
+body,html
+{
+ background: url('https://images.unsplash.com/photo-1574702955505-1a4071c98758?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=794&q=80');
+ background-position: fixed;
+ background-repeat: no-repeat;
+ background-size: cover;
+ color: black;
+}
+nav
+{
+  background: transparent;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  color:gray;
+}
+
