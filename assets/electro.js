@@ -55,13 +55,7 @@ $(document).keyup(function(e)
 
 //adding sound
 var keyData = {
-    q: {
-            sound: new Howl({
-              src: ['sound/Technosynth.wav'],
-              loop: true
-            }),
-        },
-        w: {
+      w: {
             sound: new Howl({
               src: ['sound/BrassG.wav']
             }),
@@ -79,12 +73,6 @@ var keyData = {
         t: {
             sound: new Howl({
               src: ['sound/Scrape.wav'],
-            }),
-        },
-        a: {
-            sound: new Howl({
-              src: ['sound/Technochords.wav'],
-              loop: true
             }),
         },
         s: {
@@ -107,12 +95,7 @@ var keyData = {
               src: ['sound/KickG2.wav'],
             }),
         },
-        z: {
-            sound: new Howl({
-              src: ['sound/TechnobassB.wav'],
-              loop: true
-            }),
-        },
+       
         x: {
             sound: new Howl({
               src: ['sound/SynthC.wav']
@@ -133,12 +116,7 @@ var keyData = {
               src: ['sound/SynthG.wav'],
             }),
         },
-        1: {
-            sound: new Howl({
-              src: ['sound/technorhythm.wav'],
-              loop: true
-            }),
-        },
+        
         2: {
             sound: new Howl({
               src: ['sound/Snare.wav'],
@@ -150,18 +128,51 @@ var keyData = {
             }),
         }
 }
+var loopData = 
+{
+q: {
+    sound: new Howl({
+      src: ['sound/Technosynth.wav'],
+      loop: true
+    })
+},
+a: {
+  sound: new Howl({
+    src: ['sound/Technochords.wav'],
+    loop: true
+  }),
+},
+z: {
+  sound: new Howl({
+    src: ['sound/TechnobassB.wav'],
+    loop: true
+  }),
+},
+1: {
+  sound: new Howl({
+    src: ['sound/technorhythm.wav'],
+    loop: true
+  }),
+}
+}
+
+$(document).keydown(function(event) 
+    { if(loopData[event.key]) 
+          { loopData[event.key].sound.play();
+          }
+    });
+
+
+
+
 $(document).keydown(function(event) 
     { if(keyData[event.key]) 
            { keyData[event.key].sound.play();} 
-    });
-
-//for stop
-$(document).keydown(function(event) 
-    { if(event.which === 52 || event.which === 53) 
-        {   keyData['1'].sound.stop();
-            keyData['q'].sound.stop(); 
-            keyData['a'].sound.stop(); 
-            keyData['z'].sound.stop();
+      if(event.which === 52) 
+        {   loopData['1'].sound.stop();
+            loopData['q'].sound.stop(); 
+            loopData['a'].sound.stop(); 
+            loopData['z'].sound.stop();
             /*for q*/  $(".q").removeClass("bright"); 
             /*for a*/  $(".a").removeClass("bright"); 
             /*for z*/  $(".z").removeClass("bright"); 
@@ -177,3 +188,12 @@ $(document).keydown(function(event)
         } 
 });
 
+(function($){
+  'use strict';
+    $(window).on('load', function () {
+        if ($(".loader_wrapper").length > 0)
+        {
+            $(".loader_wrapper").fadeOut("slow");
+        }
+    });
+})(jQuery)
