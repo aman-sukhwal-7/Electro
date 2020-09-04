@@ -1,10 +1,11 @@
 #head
 {
   text-align: center;
-  color: white;
-  font-size: 4vh;
+  color: plum;
+  font-size: 7vh;
   top: 0;
   position: fixed;
+  font-family: Rajdhani;
 }
 #base
 {
@@ -16,14 +17,14 @@
   left: 32%;
   width: 450px;
   height: 450px;
-  background: #282828;
+  background: transparent;  
   padding: 2%;
   border-radius: 1%;
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 1);
+  border: 2px black solid;
 }
 #pd
 {
-    border: 0.5px solid #282828;
     margin: 4%;
     display: flex;
     text-align: center;
@@ -31,7 +32,9 @@
     justify-content: center;
     text-transform: uppercase;
     background:radial-gradient( ellipse, #8af7e4 0.5%, #0033FF );
-   
+    font-family: Rajdhani;
+    font-weight: 500;
+    font-size: 2.5vh;
 }
 
 #pd:nth-child(5n-1)
@@ -73,14 +76,7 @@
   filter: brightness(150%);
   box-shadow: 0 0 4px #8af7e4, 0 0 8px #8af7e4, 0 0 15px #8af7e4;
 }
-body,html
-{
- background: url('https://images.unsplash.com/photo-1574702955505-1a4071c98758?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=794&q=80');
- background-position: fixed;
- background-repeat: no-repeat;
- background-size: cover;
- color: black;
-}
+
 nav
 {
   background: transparent;
@@ -90,7 +86,10 @@ nav
   width: 100%;
   text-align: center;
   color:gray;
+  font-family: Rajdhani;
 }
+
+  /* loader */
 .loader_wrapper
 {   position: absolute;
     top: 50%;
@@ -102,7 +101,7 @@ nav
 {
     height: 100px;
     width: 100px;
-    border-top: 5px solid #ff3353;
+    border-top: 5px solid white;
     border-radius: 50%;
     animation: spin 1s linear infinite;
 }
@@ -118,3 +117,50 @@ spin
     
 }
 
+  /* videobackground */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.showcase {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+  color: #d4fd02;
+}
+
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--primary-color) url('/stylesheets/assests/image.png') no-repeat center center/cover;
+}
+
+.video-container video {
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.video-container:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+}
