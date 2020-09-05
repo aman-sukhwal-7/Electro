@@ -2,6 +2,7 @@ var k = 1;
 var a = 1;
 var z = 1;
 var o = 1;
+var playingq = 1;
 //assigning keypress
 $(document).keydown(function(e)
 { 
@@ -127,9 +128,9 @@ var keyData = {
               src: ['sound/SwipeRide.wav'],
             }),
         }
-}
-var loopData = 
-{
+      }    
+    
+ var loopData ={   
 q: {
     sound: new Howl({
       src: ['sound/Technosynth.wav'],
@@ -156,11 +157,6 @@ z: {
 }
 }
 
-$(document).keydown(function(event) 
-    { if(loopData[event.key]) 
-          { loopData[event.key].sound.play();
-          }
-    });
 
 
 
@@ -169,10 +165,10 @@ $(document).keydown(function(event)
     { if(keyData[event.key]) 
            { keyData[event.key].sound.play();} 
       if(event.which === 52) 
-        {   loopData['1'].sound.stop();
-            loopData['q'].sound.stop(); 
-            loopData['a'].sound.stop(); 
-            loopData['z'].sound.stop();
+        {   keyData['1'].sound.stop();
+            keyData['q'].sound.stop(); 
+            keyData['a'].sound.stop(); 
+            keyData['z'].sound.stop();
             /*for q*/  $(".q").removeClass("bright"); 
             /*for a*/  $(".a").removeClass("bright"); 
             /*for z*/  $(".z").removeClass("bright"); 
@@ -185,7 +181,8 @@ $(document).keydown(function(event)
             a=1;
             z=1;
             o=1;
-        } 
+        }
+      if(event.which === 81 && playingq === 1){ loopData[event.key].sound.play();}   
 });
 
 (function($){
